@@ -51,6 +51,8 @@ def pre_build_commands():
 
 def commands():
     env.REZ_XSTUDIO_ROOT = '{root}'
+    env.PATH.append('{root}/bin')
+    env.PYTHONPATH.append('{root}/lib/python')
 
 uuid = 'repository.xstudio'
 
