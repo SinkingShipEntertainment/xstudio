@@ -37,6 +37,7 @@ foreach (comp ${CAF_FIND_COMPONENTS})
   endif ()
   if (CAF_ROOT_DIR)
     set(header_hints
+        "$ENV{REZ_ACTOR_FRAMEWORK_ROOT}/include"
         "${CAF_ROOT_DIR}/include"
         "${CAF_ROOT_DIR}/libcaf_${comp}"
         "${CAF_ROOT_DIR}/../libcaf_${comp}"
@@ -88,6 +89,7 @@ foreach (comp ${CAF_FIND_COMPONENTS})
                    NAMES
                      "caf_${comp}"
                    HINTS
+                     "$ENV{REZ_ACTOR_FRAMEWORK_ROOT}/lib64"
                      ${library_hints}
                      /usr/lib
                      /usr/local/lib

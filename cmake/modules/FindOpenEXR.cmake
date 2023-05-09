@@ -117,6 +117,7 @@ else ()
 
     set (FOUND_OPENEXR_WITH_CONFIG 0)
 
+
 # Other standard issue macros
 include (FindPackageHandleStandardArgs)
 include (SelectLibraryConfigurations)
@@ -151,6 +152,8 @@ set (GENERIC_INCLUDE_PATHS
     $ENV{OPENEXR_ROOT}/include
     ${ILMBASE_ROOT}/include
     $ENV{ILMBASE_ROOT}/include
+    ${IMATH_ROOT_DIR}/include
+    $ENV{IMATH_ROOT_DIR}/include
     ${_ILMBASE_INCLUDEDIR}
     ${_OPENEXR_INCLUDEDIR}
     /usr/local/include
@@ -160,7 +163,7 @@ set (GENERIC_INCLUDE_PATHS
     /opt/local/include )
 
 # Find the include file locations.
-find_path (ILMBASE_INCLUDE_PATH OpenEXR/IlmBaseConfig.h
+find_path (ILMBASE_INCLUDE_PATH Imath/ImathVec.h
            HINTS ${ILMBASE_INCLUDE_DIR} ${OPENEXR_INCLUDE_DIR}
                  ${GENERIC_INCLUDE_PATHS} )
 find_path (OPENEXR_INCLUDE_PATH OpenEXR/OpenEXRConfig.h
@@ -194,6 +197,7 @@ set (GENERIC_LIBRARY_PATHS
     ${OPENEXR_ROOT}/lib
     ${ILMBASE_ROOT}/lib
     ${OPENEXR_INCLUDE_PATH}/../lib
+    ${ILMBASE_INCLUDE_PATH}/../lib64
     ${ILMBASE_INCLUDE_PATH}/../lib
     ${_ILMBASE_LIBDIR}
     ${_OPENEXR_LIBDIR}

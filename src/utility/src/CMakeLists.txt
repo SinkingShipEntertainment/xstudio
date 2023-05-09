@@ -6,6 +6,7 @@ SET(LINK_DEPS
 	spdlog::spdlog
 	stdc++fs
 	uuid
+	Imath::Imath
 )
 
 SET(STATIC_LINK_DEPS
@@ -16,8 +17,10 @@ SET(STATIC_LINK_DEPS
 	spdlog::spdlog
 	stdc++fs
 	uuid
+	Imath::Imath
 )
 
+find_package(Imath REQUIRED)
 find_package(spdlog REQUIRED)
 find_package(fmt REQUIRED)
 find_package(nlohmann_json REQUIRED)

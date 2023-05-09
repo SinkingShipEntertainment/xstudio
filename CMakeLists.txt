@@ -8,13 +8,16 @@ project(${XSTUDIO_GLOBAL_NAME} VERSION ${XSTUDIO_GLOBAL_VERSION} LANGUAGES CXX)
 option(BUILD_TESTING "Build tests" OFF)
 option(INSTALL_PYTHON_MODULE "Install python module" ON)
 option(INSTALL_XSTUDIO "Install xstudio" ON)
-option(BUILD_DOCS "Build xStudio documentation" ON)
+option(BUILD_DOCS "Build xStudio documentation" OFF)
 option(ENABLE_CLANG_TIDY "Enable clang-tidy, ninja clang-tidy." OFF)
 option(ENABLE_CLANG_FORMAT "Enable clang format, ninja clangformat." OFF)
 option(FORCE_COLORED_OUTPUT "Always produce ANSI-colored output (GNU/Clang only)." TRUE)
 option(OPTIMIZE_FOR_NATIVE "Build with -march=native" OFF)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/utils")
+
+set(OPENSSL_ROOT_DIR $ENV{OPENSSL_ROOT_DIR})
 
 set(STUDIO_PLUGINS "" CACHE STRING "Enable compilation of SITE plugins")
 

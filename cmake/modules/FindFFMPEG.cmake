@@ -63,6 +63,7 @@ function (_ffmpeg_find component headername)
     NAMES
       "lib${component}/${headername}"
     PATHS
+      "$ENV{REZ_FFMPEG_ROOT}/include"
       "${FFMPEG_ROOT}/include"
       ~/Library/Frameworks
       /Library/Frameworks
@@ -73,8 +74,8 @@ function (_ffmpeg_find component headername)
       /opt/csw/include # Blastwave
       /opt/include
       /usr/freeware/include
-    PATH_SUFFIXES
-      ffmpeg
+    # PATH_SUFFIXES
+    #   ffmpeg
     DOC "FFMPEG's ${component} include directory")
   mark_as_advanced("FFMPEG_${component}_INCLUDE_DIR")
 
@@ -88,6 +89,7 @@ function (_ffmpeg_find component headername)
     NAMES
       "${component}"
     PATHS
+      "$ENV{REZ_FFMPEG_ROOT}/lib"
       "${FFMPEG_ROOT}/lib"
       ~/Library/Frameworks
       /Library/Frameworks
