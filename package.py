@@ -37,6 +37,7 @@ requires = [
     "qt-5.15",
     "libjpeg",
     "freetype",
+    "otio",
 ]
 
 private_build_requires = [
